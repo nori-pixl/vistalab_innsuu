@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>素因数分解ベンチマーク</title>
+
+        <style>
+            body {
+                background-color: aquamarine;
+                text-align: center;
+                margin: 0;
+                padding: 1rem;
+                box-sizing: border-box;
+                overflow-wrap: anywhere;
+            }
+        </style>
+
+        <link rel="stylesheet" href="style.css?v=3.0.0">
+        <script src="script.js?v=3.0.0" defer></script>
+    </head>
+
+    <body>
+        <h1>素因数分解ベンチマーク 3.0</h1>
+        <p>Prime Factorization Benchmark</p>
+        <hr>
+        <p>計算内容: 1145141919810364364を10秒間で何回素因数分解できるか計測します。</p>
+        <p>
+            <label>GPU処理サイズ（初期値130）:
+                <input id="gpu-size" type="number" min="8" max="1024" step="1" value="130" style="width:5em">
+            </label>
+            × <span id="gpu-size-label">130</span>
+            （1回の描画で <span id="gpu-pixels-label">16,900</span> 回ぶんを同時に処理）
+        </p>
+        <button id="start-benchmark" type="button">開始（シングル・マルチ・GPU）</button>
+        <br>
+        <br>
+        <div id="log">10秒間に素因数分解できた回数を計測します。</div> <br>
+        <div id="bench-result">
+            計測時間: 各方式10秒<br>
+            <hr>
+            <strong>シングル回数: <span id="display-single-score">0</span> 回<br>
+            マルチ回数: <span id="display-multi-score">0</span> 回<br>
+            GPU回数: <span id="display-gpu-score">0</span> 回</strong>
+            <br>
+            <small id="gpu-hex">GPUの結果HEX: -</small>
+        <hr>
+        <button id="share-to-twitter" type="button" disabled>Twitterに結果を共有</button>
+        </div>
+    </body>
+</html>
